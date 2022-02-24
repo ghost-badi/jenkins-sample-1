@@ -5,7 +5,7 @@ timestamps {
 node () {
 
 	stage ('APP-IC - Checkout') {
- 	 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git-login', url: 'https://github.com/bnasslahsen/jenkins-sample-1.git']]]) 
+ 	 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git-login', url: 'https://github.com/ghost-badi/jenkins-sample-1.git']]]) 
 	}
 		
 	
@@ -31,7 +31,7 @@ node () {
 
 	stage ('APP-IC - Post build actions') {
 	// Mailer notification
-	step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'jenkins.orsys@gmail.com', sendToIndividuals: false])
+	step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'chanbadi31@gmail.com', sendToIndividuals: false])
 	}
 	
 }
